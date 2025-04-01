@@ -6,7 +6,7 @@
   <link href="https://machenye.github.io/atom.xml" rel="self"/>
   
   <link href="https://machenye.github.io/"/>
-  <updated>2025-04-01T08:57:05.824Z</updated>
+  <updated>2025-04-01T12:08:48.468Z</updated>
   <id>https://machenye.github.io/</id>
   
   <author>
@@ -21,17 +21,17 @@
     <link href="https://machenye.github.io/2025/02/27/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/"/>
     <id>https://machenye.github.io/2025/02/27/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/</id>
     <published>2025-02-27T06:16:10.000Z</published>
-    <updated>2025-04-01T08:57:05.824Z</updated>
+    <updated>2025-04-01T12:08:48.468Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>首先进入hexo的地址，我的地址为 <code>D:/_code/Hexo/mywebsite/</code></li><li>创建新博客 <code>hexo new &quot;如何更新博客&quot;</code></li><li>也可以更新博客内容，我的地址为 <code>D:/_code/Hexo/mywebsite/source/_posts</code></li><li>更新完成之后运行 <code>hexo g</code> 生成文件，然后运行 <code>hexo s</code> 可以本地预览博客，最后运行 <code>hexo d</code> 上传到github上</li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>首先进入hexo的地址，我的地址为 <code>E:/_myblog</code></li><li>创建新博客 <code>hexo new &quot;如何更新博客&quot;</code></li><li>也可以更新博客内容，我的地址为 <code>E:/_myblog/source/_posts</code></li><li>更新完成之后运行 <code>hexo g</code> 生成文件，然后运行 <code>hexo s</code> 可以本地预览博客，最后运行 <code>hexo d</code> 上传到github上</li><li>也可以直接运行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code> 或者<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>一步到位</li></ol>]]></content>
     
     
       
       
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;首先进入hexo的地址，我的地址为 &lt;code&gt;D:/_code/Hexo/mywebsite/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;首先进入hexo的地址，我的地址为 &lt;code&gt;E:/_myblog&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;创建新博客 &lt;code&gt;hexo new &amp;quot;如何更新博客&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;也可以更新博客内容，</summary>
+&lt;li&gt;也可以更新博客内容，我的地址为 &lt;code&gt;E:</summary>
       
     
     
