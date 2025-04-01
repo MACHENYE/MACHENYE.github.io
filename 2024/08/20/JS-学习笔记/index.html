@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1,user-scalable=no"><meta name="renderer" content="webkit"><meta name="color-scheme" content="dark light"><meta name="author" content="Mcola"><meta name="description" content=""><meta name="keywords" content=""><title>JS 学习笔记</title><link rel="icon" type="image/x-icon" href="/images/favicon.ico"><link rel="stylesheet" href="//at.alicdn.com/t/font_3242539_utq6ykfq7z.css"><link rel="stylesheet" light-src="https://cdn.staticfile.org/highlight.js/11.5.0/styles/github.min.css" dark-src="https://cdn.staticfile.org/highlight.js/11.5.0/styles/github-dark.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif" as="font"><link href="/style/index.css" rel="stylesheet"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Mcola的个人博客" type="application/atom+xml">
+</head><body><header class="page-header"><nav><ul class="router-list"><li class="nav-item"> <a href="/">主页</a></li><li class="nav-item"> <a href="/archives/">归档</a></li><li class="nav-item"> <a href="/atom.xml">RSS</a></li></ul><div class="mode-switch"><span class="iconfont icon-DarkTheme"></span></div></nav></header><main><section class="main-content"><section class="post-page"><div class="title-bar"><h1>JS 学习笔记</h1><div class="post-info"><span>2024-08-20 16:53:46</span><span class="tags"><a href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">#前端学习</a></span></div></div><article> <div class="content"><blockquote>
+<p>本篇文章为作者在网上自学JS时的笔记，看的狂神的b站视频<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JJ41177di?vd_source=60d132d325064c67a7980dc5ab2ba430">视频链接</a></p>
+</blockquote>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本人认为JS的语法和Java，python及其相似，像是融合了这两种语言的语法</p>
+<h1 id="快速引入"><a href="#快速引入" class="headerlink" title="快速引入"></a>快速引入</h1><h2 id="引入JavaScript"><a href="#引入JavaScript" class="headerlink" title="引入JavaScript"></a>引入JavaScript</h2><h3 id="内部标签"><a href="#内部标签" class="headerlink" title="内部标签"></a>内部标签</h3><pre><code class="hljs jsx">&lt;script&gt; 
+\\\ js代码 
+&lt;/script&gt;</code></pre>
+
+<h3 id="外部标签"><a href="#外部标签" class="headerlink" title="外部标签"></a>外部标签</h3><pre><code class="hljs jsx">&lt;script src = <span class="hljs-string">&quot;xxx.js&quot;</span>&gt;&lt;/script&gt;</code></pre>
+
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><pre><code class="hljs jsx">
+<span class="hljs-comment">// 变量的类型可以任意</span>
+<span class="hljs-keyword">var</span> num = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;mcola&quot;</span>;
+<span class="hljs-keyword">var</span> float = <span class="hljs-number">1.1</span>;
+
+<span class="hljs-comment">// 注意变量名不能以数字开头，但是可以用中文命名</span></code></pre>
+
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code class="hljs jsx"><span class="hljs-title function_">alert</span>(xxx); <span class="hljs-comment">// 在页面弹窗输出内容</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(xxx); <span class="hljs-comment">// 在页面的控制台（F12）输出内容</span></code></pre>
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><pre><code class="hljs jsx">= 
+== <span class="hljs-comment">//等于（类型不一样，值相同也为true）</span>
+=== <span class="hljs-comment">// 绝对等于（要求类型和值均相同才为true）</span>
+
+------------------------
+<span class="hljs-title class_">NaN</span> === <span class="hljs-title class_">NaN</span> <span class="hljs-comment">// 为false，NaN与任何值都不相同包括它自己</span>
+<span class="hljs-comment">// 只能通过isNaN(NaN)来判断</span></code></pre>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><pre><code class="hljs jsx"><span class="hljs-keyword">var</span> array = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1.1</span>,<span class="hljs-string">&quot;mcola&quot;</span>];
+
+<span class="hljs-comment">// 改变数组长度则数组的空间也会变化</span>
+	array.<span class="hljs-property">length</span> = <span class="hljs-number">10</span>;
+	<span class="hljs-comment">// 则array就会变为有10个元素的数组，后面的元素为空</span>
+	array.<span class="hljs-property">length</span> = <span class="hljs-number">2</span>;
+	<span class="hljs-comment">// 则只有索引为0和1的元素，其他元素丢失</span>
+
+<span class="hljs-comment">// 根据元素获取下标</span>
+	array.<span class="hljs-title function_">indexOf</span>(<span class="hljs-number">1.1</span>) <span class="hljs-comment">// 则会输出3</span>
+	
+<span class="hljs-comment">// slice()</span>
+arr.<span class="hljs-title function_">slice</span>(<span class="hljs-number">3</span>); <span class="hljs-comment">// 从下标3开始往后截，生成一个新的数组</span>
+
+<span class="hljs-comment">// push()</span>
+arr.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// 在数组最后添加</span>
+
+<span class="hljs-comment">// pop()</span>
+arr.<span class="hljs-title function_">pop</span>(); <span class="hljs-comment">// 输出数组最后一个元素，并删除这个元素  </span>
+
+<span class="hljs-comment">// unshift();</span>
+arr.<span class="hljs-title function_">unshift</span>(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// 在头部插入一个元素</span>
+
+<span class="hljs-comment">// shift();</span>
+arr.<span class="hljs-title function_">shift</span>(); <span class="hljs-comment">// 弹出头部的元素</span>
+
+<span class="hljs-comment">// sort();</span>
+arr.<span class="hljs-title function_">sort</span>(); <span class="hljs-comment">// 排序</span>
+
+<span class="hljs-comment">// reverse();</span>
+arr.<span class="hljs-title function_">reverse</span>(); <span class="hljs-comment">// 数组反转</span>
+
+<span class="hljs-comment">// concat();</span>
+arr.<span class="hljs-title function_">concat</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]); <span class="hljs-comment">// 添加一个新的数组在尾部，但是不改变原来的数组</span>
+
+<span class="hljs-comment">// join();</span>
+arr.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;-&#x27;</span>); <span class="hljs-comment">// 打印数组，使用特定的拼接符链接</span>
+
+<span class="hljs-comment">// 多维数组</span>
+arr = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]] <span class="hljs-comment">// 与c++一样</span>
+</code></pre>
+
+<p>取数组下标，如果越界了就会显示undefined（未定义），而不是null（空）</p>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><pre><code class="hljs jsx"><span class="hljs-comment">// 定义一个对象</span>
+<span class="hljs-keyword">var</span> person = &#123;
+		<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;mcola&quot;</span>,  <span class="hljs-comment">// 使用逗号分隔不同属性</span>
+		<span class="hljs-attr">age</span>:<span class="hljs-number">20</span>,
+		<span class="hljs-attr">school</span>:<span class="hljs-variable constant_">ZJUT</span>;
+&#125;
+
+<span class="hljs-comment">// 取对象的值,直接在控制台输入即可输出</span>
+person.<span class="hljs-property">name</span>
+person.<span class="hljs-property">age</span>
+
+<span class="hljs-comment">// 动态删除属性</span>
+<span class="hljs-keyword">delete</span> person.<span class="hljs-property">age</span>;
+
+<span class="hljs-comment">// 动态添加属性</span>
+person.<span class="hljs-property">hobby</span> = <span class="hljs-string">&quot;playing&quot;</span>; <span class="hljs-comment">// 只要对一个没定义的属性赋值就会添加这个属性</span>
+
+<span class="hljs-comment">// 判断属性值是否在对象中</span>
+<span class="hljs-string">&#x27;age&#x27;</span> <span class="hljs-keyword">in</span> person <span class="hljs-comment">// 输出为true则在</span>
+<span class="hljs-comment">// 但是这包括了继承的属性</span>
+
+<span class="hljs-comment">// 判断属性值是否是这个对象自身拥有的</span>
+person.<span class="hljs-title function_">hasOwnProperty</span>(<span class="hljs-string">&#x27;age&#x27;</span>);</code></pre>
+
+<h3 id="严格检查机制"><a href="#严格检查机制" class="headerlink" title="严格检查机制"></a>严格检查机制</h3><pre><code class="hljs jsx"><span class="hljs-meta">&#x27;use strict&#x27;</span> <span class="hljs-comment">// 在script代码最开始写上这个</span>
+<span class="hljs-keyword">let</span> num = <span class="hljs-number">1</span>; <span class="hljs-comment">// 后面都这样定义变量 </span></code></pre>
+
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><pre><code class="hljs jsx"><span class="hljs-comment">// 转义字符</span>
+/<span class="hljs-string">&#x27;</span>
+<span class="hljs-string">/t</span>
+<span class="hljs-string">/n</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">// 输入多行字符串</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">var msg = `</span>
+<span class="hljs-string">		hello </span>
+<span class="hljs-string">		world</span>
+<span class="hljs-string">`</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">// 模板字符串</span>
+<span class="hljs-string">let name = &quot;mcola&quot;;</span>
+<span class="hljs-string">let msg = `hello , $&#123;name&#125;` // 输出hello , mcola</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">// 字符串长度</span>
+<span class="hljs-string">string.length</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">// 字符串的不可变性</span>
+<span class="hljs-string">var str = &quot;hello&quot;; // 不能通过str[0]=&#x27;</span>a<span class="hljs-string">&#x27;来修改字符串</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">// 字符串的一些方法</span>
+<span class="hljs-string">	// 大小写转换</span>
+<span class="hljs-string">	student.toUpperCase()</span>
+<span class="hljs-string">	student.toLowerCase()</span>
+<span class="hljs-string">	</span>
+<span class="hljs-string">	// 获取某个元素的下标</span>
+<span class="hljs-string">	student.indexOf(&#x27;</span>t<span class="hljs-string">&#x27;) // 在student字符串中t元素所在的下标</span>
+<span class="hljs-string">	</span>
+<span class="hljs-string">	// substring</span>
+<span class="hljs-string">	[)   // 前闭后开</span>
+<span class="hljs-string">	student.substring(1) // 从索引为1的字符截取到最后</span>
+<span class="hljs-string">	student.substring(1,3) // 总索引为1的字符截取到索引为3（不包括3）的字符</span>
+<span class="hljs-string">		</span></code></pre>
+
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><pre><code class="hljs jsx"><span class="hljs-keyword">var</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;tom&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;jack&quot;</span>,<span class="hljs-number">90</span>]]);
+<span class="hljs-keyword">var</span> score = map.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;tom&quot;</span>); <span class="hljs-comment">// 通过key获得value</span>
+
+map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;mcola&quot;</span>,<span class="hljs-number">123</span>); <span class="hljs-comment">// 添加元素</span>
+map.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;tom&quot;</span>); <span class="hljs-comment">// 删除</span></code></pre>
+
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><pre><code class="hljs jsx"><span class="hljs-comment">// 无序不重复集合</span>
+<span class="hljs-keyword">var</span> set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>]); <span class="hljs-comment">// 输出为1，2，3 ，自动去重</span>
+set.<span class="hljs-title function_">add</span>(<span class="hljs-number">4</span>); <span class="hljs-comment">// 添加元素</span>
+set.<span class="hljs-title function_">delete</span>(<span class="hljs-number">3</span>); <span class="hljs-comment">// 删除元素</span>
+set.<span class="hljs-title function_">has</span>(<span class="hljs-number">1</span>); <span class="hljs-comment">// 判断是否包含</span></code></pre>
+
+<h3 id="iterator遍历Map和Set"><a href="#iterator遍历Map和Set" class="headerlink" title="iterator遍历Map和Set"></a>iterator遍历Map和Set</h3><pre><code class="hljs jsx"><span class="hljs-keyword">var</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;tom&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;jack&quot;</span>,<span class="hljs-number">90</span>]]);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x <span class="hljs-keyword">of</span> map)&#123;
+		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x); 
+&#125;
+
+<span class="hljs-keyword">var</span> set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>]);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x <span class="hljs-keyword">of</span> set)&#123;
+		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);
+&#125;</code></pre>
+
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="if判断"><a href="#if判断" class="headerlink" title="if判断"></a>if判断</h3><pre><code class="hljs jsx"><span class="hljs-comment">// 与其他语言一样</span>
+<span class="hljs-keyword">if</span>(num&gt;<span class="hljs-number">12</span>)&#123;
+	xxx
+&#125;<span class="hljs-keyword">else</span> &#123;
+	xxx
+&#125;</code></pre>
+
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><pre><code class="hljs jsx"><span class="hljs-comment">// 与其他语言一样</span>
+<span class="hljs-keyword">while</span>(n&lt;m)&#123;
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(n);
+	n++;
+&#125;
+
+<span class="hljs-keyword">do</span>&#123;
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(n);
+	n++;
+&#125;<span class="hljs-keyword">while</span>(n&lt;m)</code></pre>
+
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><pre><code class="hljs jsx"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);
+&#125;</code></pre>
+
+<h3 id="数组循环"><a href="#数组循环" class="headerlink" title="数组循环"></a>数组循环</h3><pre><code class="hljs jsx"><span class="hljs-keyword">var</span> array = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1.2</span>,<span class="hljs-string">&quot;mcola&quot;</span>];
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> array)&#123;
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">array</span>(i); <span class="hljs-comment">// 输出数组中的每一个元素,i为索引</span>
+&#125;
+
+<span class="hljs-comment">// 注意区分</span>
+------------------------
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i <span class="hljs-keyword">of</span> array)&#123;
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i); <span class="hljs-comment">// 输出数组中的每一个元素,i为元素</span>
+&#125;
+
+<span class="hljs-comment">// forEach循环</span>
+array.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>)&#123;
+	cosole.<span class="hljs-title function_">log</span>(value);
+&#125;)</code></pre>
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><blockquote>
+<p>定义方式一(建议）</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">abs</span>(<span class="hljs-params">x</span>)&#123;
+	<span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;
+		<span class="hljs-keyword">return</span> x;
+	&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> -x;
+&#125;</code></pre>
+
+<blockquote>
+<p>定义方式二</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-keyword">var</span> abs = <span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>)&#123;
+		<span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;
+			<span class="hljs-keyword">return</span> x;
+		&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> -x;
+&#125;</code></pre>
+
+<blockquote>
+<p>调用函数</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-title function_">abs</span>(<span class="hljs-number">10</span>);</code></pre>
+
+<blockquote>
+<p>参数问题</p>
+</blockquote>
+<p>可以传递任意个参数，也可以不传递参数</p>
+<p>‘arguments’ 代表传进来的所有参数是一个数组，可以拿出来所有传入的参数</p>
+<blockquote>
+<p>Rest</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a,b,...rest</span>)&#123;
+		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(rest); <span class="hljs-comment">// 将剩下未定义的参数全部放到一个数组中</span>
+&#125;</code></pre>
+
+<blockquote>
+<p>规避参数异常</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> x !== number)&#123;
+		<span class="hljs-keyword">throw</span> <span class="hljs-string">&#x27;Not a number&#x27;</span>;
+&#125;</code></pre>
+
+<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><blockquote>
+<p>在函数体内用var定义的变量在函数体外是不能用的（闭包）</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-meta">&#x27;use strict&#x27;</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123;
+    <span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;
+&#125;
+x = x + <span class="hljs-number">1</span>; <span class="hljs-comment">// Uncaught ReferenceError: x is not defined</span>
+
+---------------------------------------
+</code></pre>
+
+<blockquote>
+<p>内部函数可以访问外部函数的变量，反之不行</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-meta">&#x27;use strict&#x27;</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123; 
+    <span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">f2</span>(<span class="hljs-params"></span>)&#123;
+        <span class="hljs-keyword">var</span> y = x + <span class="hljs-number">1</span>;<span class="hljs-comment">// 2  </span>
+    &#125;
+    <span class="hljs-keyword">var</span> z = x + y; <span class="hljs-comment">// 报错</span>
+&#125;</code></pre>
+
+<blockquote>
+<p>调用函数从内向外，内部屏蔽外部函数的同名变量</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123; 
+        <span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">function</span> <span class="hljs-title function_">f2</span>(<span class="hljs-params"></span>)&#123;
+            <span class="hljs-keyword">var</span> x = <span class="hljs-string">&#x27;a&#x27;</span>;
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x); <span class="hljs-comment">// a</span>
+        &#125;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x); <span class="hljs-comment">// 1</span>
+        <span class="hljs-title function_">f2</span>();
+    &#125;</code></pre>
+
+<blockquote>
+<p>JS自动提升了变量的声明，但是不会提升赋值</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123; 
+      <span class="hljs-keyword">var</span> x = <span class="hljs-string">&#x27;1&#x27;</span>+y;
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x); <span class="hljs-comment">// 1undefined</span>
+      <span class="hljs-keyword">var</span> y = <span class="hljs-number">2</span>;
+&#125;
+    
+<span class="hljs-comment">// 这两个函数是等价的</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">f2</span>(<span class="hljs-params"></span>)&#123;
+    <span class="hljs-keyword">var</span> y;
+    <span class="hljs-keyword">var</span> x = <span class="hljs-string">&#x27;1&#x27;</span>+y;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);
+    y = <span class="hljs-number">2</span>;
+&#125;</code></pre>
+
+<blockquote>
+<p>规范：把所有变量的定义全部放在最前面</p>
+</blockquote>
+<pre><code class="hljs jsx"> <span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123; 
+	    <span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>,
+			    y = x + <span class="hljs-number">1</span>,
+			    z,m;
+	    <span class="hljs-comment">// ...  </span>
+&#125;</code></pre>
+
+<blockquote>
+<p>全局变量：定义在函数外部</p>
+</blockquote>
+<p>默认所有全局变量会自动绑定在window对象下，为了减少重名的冲突，把自己的代码全部放入自己定义的唯一空间名中（jQuery）</p>
+<pre><code class="hljs jsx"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>)&#123;
+		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);
+&#125;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">x</span>); <span class="hljs-comment">// 等价</span>
+<span class="hljs-title function_">alert</span>(x);
+<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(x); <span class="hljs-comment">// alert也是绑定在window对象下的</span></code></pre>
+
+<blockquote>
+<p>局部作用域：let</p>
+</blockquote>
+<pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123; 
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);
+    &#125;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i+<span class="hljs-number">1</span>); <span class="hljs-comment">// 能够在循环体外面使用i</span>
+&#125;</code></pre>
+
+<p>使用let可以解决这个问题，建议使用let定义局部作用域</p>
+<pre><code class="hljs jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123; 
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);
+    &#125;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i+<span class="hljs-number">1</span>); <span class="hljs-comment">// 能够在循环体外面使用i</span>
+&#125;</code></pre>
+
+<blockquote>
+<p>常量 const</p>
+</blockquote>
+<p>在ES6之前，约定全部大写的变量为常量，但是任然可以改变</p>
+<pre><code class="hljs jsx"><span class="hljs-keyword">var</span> <span class="hljs-variable constant_">PI</span> = <span class="hljs-number">3.14</span>;
+<span class="hljs-variable constant_">PI</span> = <span class="hljs-number">213</span>;</code></pre>
+
+<p>在ES6引入const，这样强制规定不能改变变量</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><blockquote>
+<p>定义方式</p>
+</blockquote>
+<p>把函数放在对象里</p>
+<pre><code class="hljs jsx"><span class="hljs-keyword">var</span> person = &#123;
+    <span class="hljs-attr">name</span>: mcola,
+    <span class="hljs-attr">birth</span>: <span class="hljs-number">2003</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;
+            <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">getFullYear</span>();
+            <span class="hljs-keyword">return</span> now-<span class="hljs-variable language_">this</span>.<span class="hljs-property">birth</span>;
+    &#125;
+&#125;
+
+<span class="hljs-comment">// 调用属性</span>
+person.<span class="hljs-property">name</span>
+<span class="hljs-comment">// 调用方法</span>
+person.<span class="hljs-title function_">age</span>()</code></pre></div></article><div class="post-pager"><div class="prev"><a href="/2024/08/20/ML%20and%20Data%20Analyze/" title="ML and Data Analyze">上一篇 ML and Data Analyze</a></div><div class="next"> <a href="/2024/08/20/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="搭建博客">下一篇 搭建博客</a></div></div></section></section></main><footer class="footer-page"><div><span>Powered by</span><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a><span>| Theme</span><a target="_blank" rel="noopener" href="https://github.com/techmovie/hexo-theme-instapaper">instapaper</a></div></footer><script src="/scripts/dark.js"></script><script src="/scripts/post.js"></script></body></html>
